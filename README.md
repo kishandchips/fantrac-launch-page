@@ -1,2 +1,2 @@
-Fantrac - landing page
-======================
+fantrac-launch-page
+===================
