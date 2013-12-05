@@ -1,43 +1,47 @@
 <?php
-/**
- * fantrac functions and definitions
- *
- * @package fantrac
- * @since fantrac 1.0
- */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- *
- * @since fantrac 1.0
- */
+define('THEME_NAME', 'fantrac');
 
-if ( ! function_exists( 'fantrac_setup' ) ):
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which runs
- * before the init hook. The init hook is too late for some features, such as indicating
- * support post thumbnails.
- *
- * @since fantrac 1.0
- */
-function fantrac_setup() {
+// Custom Actions
+
+// Custom Filters
+
+//add_filter('gform_submit_button', 'custom_submit_button', 10, 2);
+
+//Custom Shortcodes
+
+function custom_setup_theme() {
 
 	register_nav_menus( array(
-		'primary_header' => __( 'Primary Header Menu', 'ivip' )
+		'primary_header' => __( 'Primary Header', THEME_NAME ),
+		'primary_footer' => __( 'Primary Footer', THEME_NAME )
 	) );
 
-	add_editor_style('css/editor-styles.css');
+	//add_image_size( 'custom_medium', 706, 400, true);
 	
-}
-endif; // fantrac_setup
-add_action( 'after_setup_theme', 'fantrac_setup' );
+	add_editor_style('/css/editor-styles.css');
 
-add_action('tiny_mce_before_init', 'custom_tinymce_options');
-if ( ! function_exists( 'custom_tinymce_options' )) {
-	function custom_tinymce_options($init){
-		$init['apply_source_formatting'] = true;
-		return $init;
-	}
+	
+
 }
+
+function custom_scripts() {
+	
+	wp_deregister_script('jquery');
+
+	wp_enqueue_script('modernizr', get_template_directory_uri().'/js/libs/modernizr.min.js');
+	wp_enqueue_script('jquery',  get_template_directory_uri().'/js/libs/jquery.min.js');
+	wp_enqueue_script('easing', get_template_directory_uri().'/js/plugins/jquery.easing.js', array('jquery'), '', true);
+	wp_enqueue_script('main', get_template_directory_uri().'/js/main.js', array('jquery'), '', true);
+}
+
+function custom_styles() {
+	global $wp_styles;
+
+	wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css' );
+	wp_enqueue_style( 'ie7', get_template_directory_uri() . '/css/ie7.css' );
+
+	$wp_styles->add_data('ie7', 'conditional', 'lt IE 8');
+}
+
+

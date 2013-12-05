@@ -1,8 +1,49 @@
-// @mixin avenir-regular {
-// 	font-family:'Avenir Next LT W01 SC';
-// 	font-weight: normal;
-// }
+@import '//fast.fonts.net/cssapi/3465a363-fc35-4fa8-a757-2819a47ac851.css';
 
-// .avenir-regular {
-// 	@include avenir-regular;
-// }
+@mixin arial {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+@mixin novecento {
+	font-family: 'Novecento Sans W01 Normal', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin novecento-medium {
+	font-family: 'Novecento Sans W01 Md', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin novecento-bold {
+	font-family: 'Novecento Sans W01 Bd', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin nexa-light {
+	font-family:'Nexa W01 Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.arial {
+	@include arial;
+}
+
+.novecento {
+	@include novecento;
+}
+
+.novecento-medium {
+	@include novecento-medium;
+}
+
+.novecento-bold {
+	@include novecento-bold;
+}
+
+.nexa-light {
+	@include nexa-light;
+}
