@@ -1,4 +1,4 @@
-/* =============================================================================
+box/* =============================================================================
    Misc
    ========================================================================== */
 
@@ -84,7 +84,7 @@ blockquote {
 }
 
 .hide-on-mobile {
-	@include device-width(4) {
+	@include device-width(5) {
 		display: none !important;
 	}
 }
@@ -288,6 +288,84 @@ hr {
 	}
 }
 
+.center-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.centerer {
+  text-align:center; 
+  font: 0/0 a;
+}
+
+.center {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.centered {
+  vertical-align: middle;
+  display: inline-block;
+  width:98%;
+}
+
+.box {
+	@include box-sizing(border-box);
+	background:#FFF;
+	@include border-radius(5px);
+	@include box-shadow(0 0 5px #000);
+	padding: 55px 55px 40px;
+	color: #333;
+	@include novecento-medium;
+	text-transform: uppercase;
+	@include font-size(18);
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+
+	strong {
+		@include novecento-bold;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	.icon-star {
+		@extend .icon-star:before;
+		width: 40px;
+		height: 40px;
+		display: block;
+		color: #FFF;
+		@include border-radius(50%);
+		position: absolute;
+		top: -20px;
+		left: 46%;
+		@include font-size(29);
+		line-height: 38px;
+		background-color: #e93873; // Old browsers
+		@include filter-gradient(#e93873, #641888, vertical); // IE6-9
+		@include background-image(linear-gradient(top,  #e93873 0%,#641888 100%));
+	}
+
+	.bottom {
+		height: 5px;
+		display: block;
+		width: 100%;
+		position: absolute;
+		background-color: #631888; // Old browsers
+		@include filter-gradient(#631888, #e83873, horizontal); // IE6-9
+		@include background-image(linear-gradient(left,  #631888 0%,#e83873 100%));		
+		bottom: 0;
+		left: 0;
+		@include border-bottom-radius(5px);
+	}
+}
 
 
 

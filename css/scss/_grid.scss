@@ -38,7 +38,6 @@
 	display: block;
 	position: relative;
 	@include box-sizing(border-box);
-	z-index: 100;
 
 	&.alpha {
 		padding-left: 0;
@@ -80,7 +79,7 @@ $i: 1;
 }
 
 .break-on-mobile {
-	@include device-width(4) {
+	@include device-width(5) {
 		width: 100% !important;
 		margin-left: 0;
 		margin-right: 0;

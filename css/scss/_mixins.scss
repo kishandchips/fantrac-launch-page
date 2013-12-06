@@ -37,6 +37,13 @@
 	font-size: ($size / 10) + rem;
 }
 
+@mixin min-height($height){
+  	min-height: ($height) + px;
+	height: auto !important;
+	height: ($height) + px;
+}
+
 @function pxtoem($px){
 	@return $px * 0.0769827586em;
 }
+

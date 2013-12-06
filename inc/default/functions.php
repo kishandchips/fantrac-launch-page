@@ -100,3 +100,34 @@ if ( ! function_exists( 'get_queried_page' )) {
 		return null;
 	}
 }
+
+add_action("gform_field_standard_settings", "custom_gform_standard_settings", 10, 2);
+function custom_gform_standard_settings($position, $form_id){
+    if($position == 25){
+    	?>
+        <li style="display: list-item; ">
+            <label for="field_placeholder">Placeholder Text</label>
+            <input type="text" id="field_placeholder" size="35" onkeyup="SetFieldProperty('placeholder', this.value);">
+        </li>
+        <?php
+    }
+}
+
+add_action('gform_enqueue_scripts',"custom_gform_enqueue_scripts", 10, 2);
+function custom_gform_enqueue_scripts($form, $is_ajax=false){
+    ?>
+<script>
+    jQuery(function(){
+        <?php
+        foreach($form['fields'] as $i=>$field){
+            if(isset($field['placeholder']) && !empty($field['placeholder'])){
+                ?>
+                jQuery('#input_<?php echo $form['id']?>_<?php echo $field['id']?>').attr('placeholder','<?php echo $field['placeholder']?>');
+                <?php
+            }
+        }
+        ?>
+    });
+    </script>
+    <?php
+}

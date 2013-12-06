@@ -3,40 +3,33 @@
 
 	<?php if(get_row_layout() == "row"): ?>
 
-	<div class="columns clearfix">
-		<?php $total_columns = count( get_sub_field('column')); ?>
-		<?php while (has_sub_field('column')) : ?>
+	<div class="row clearfix <?php the_sub_field('classname'); ?>" style="background: url(<?php the_sub_field('row_background'); ?>);">
+		<div class="container">
+			<?php $total_columns = count( get_sub_field('column')); ?>
+			<?php while (has_sub_field('column')) : ?>
 
-		<?php
-		switch($total_columns){
-			case 2:
-				$class = 'five';
-				break;
-			case 3:
-				$class = 'one-third';
-				break;
-			case 4:
-				$class = 'one-fourth';
-				break;
-			case 5:
-				$class = 'one-fifth';
-				break;
-			case 1:
-			default:
-				$class = 'ten';
-				break;
-		} ?>
-			<div class="break-on-mobile span <?php echo $class; ?>" style="<?php the_sub_field('css'); ?>;">
-				<div class="inner equal-height">
-					<div class="content clearfix">
-						<?php the_sub_field('content'); ?>
-					</div>
-						<?php if(get_sub_field('link_to')): ?>
-						<a href="<?php the_sub_field('link_to'); ?>" class="button"><?php _e('Tell me more')?></a>
-					<?php endif?>
+				<div class="break-on-mobile span <?php if( get_sub_field('center_box') ): ?>four<?php else:  ?>six<?php endif; ?> <?php if( get_sub_field('hideonmobile') ): ?>hide-on-mobile<?php else:  ?><?php endif; ?>" style="<?php the_sub_field('css'); ?>;">
+					<?php if( get_sub_field('center_box') ): ?>
+						<div class="center-container ">
+					        <div class="center"></div>
+					        <div class="centered">
+					        	<div class="box">
+					        		<div class="inner">
+						        		<span class="icon-star"></span>
+						        		<?php the_sub_field('content'); ?>
+					        		</div>
+					        		<div class="bottom"></div>
+					        	</div>
+					        </div>
+				        </div>	
+					<?php else:  ?>
+						<div class="content clearfix">
+							<?php the_sub_field('content'); ?>
+						</div>
+					<?php endif; ?>	
 				</div>
-			</div>
-		<?php endwhile; ?>
+			<?php endwhile; ?>
+		</div>
 	</div>
 	<?php endif; ?>
 <?php endwhile; ?>

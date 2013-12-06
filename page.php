@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-<div id="page" class="container">
+<div id="page">
 	<?php while ( have_posts() ) : the_post(); ?>
 	<div id="content">
 		<?php if(!$post->post_content == ''): ?>
@@ -22,7 +22,7 @@ get_header(); ?>
 		</div>
 		<?php endif; ?>
 		<?php if ( get_field('content')):?>
-			<?php get_template_part('inc/content'); ?>
+			<?php get_template_part('inc/default/content'); ?>
 		<?php endif; ?>
 	</div>
 	<?php endwhile; // end of the loop. ?>

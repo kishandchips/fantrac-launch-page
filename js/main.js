@@ -3,14 +3,7 @@
 	window.main = {
 		init: function(){
 
-			$('a[href^=#].scroll-to-btn').click(function(){
-				var target = $($(this).attr('href'));
-				var offsetTop = (target.length != 0) ? target.offset().top : 0;
-				$('html,body').animate({scrollTop: offsetTop},'slow');
-				return false;
-			});
 		},
-
 
 		loaded: function(){
 			this.setBoxSizing();
@@ -29,7 +22,7 @@
 		            span.css('width',newW);
 		        });
 		    }
-		},		
+		},	
 		
 		resize: function(){
 		}
@@ -41,6 +34,9 @@
 
 	$(window).load(function(){
 		main.loaded();
+	});
+
+	$(window).resize(function(){
 	});
 
 })(jQuery);

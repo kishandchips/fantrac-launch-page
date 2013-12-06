@@ -1,9 +1,34 @@
 html {
+	height: 100%;
 	font-size: 62.5%;
 
-	// @include device-width(6) {
-	// 	font-size: 50%;
-	// }
+	@include device-width(10) {
+		font-size: 61%;
+	}
+
+	@include device-width(9) {
+		font-size: 60%;
+	}
+
+	@include device-width(8) {
+		font-size: 59%;
+	}
+
+	@include device-width(7) {
+		font-size: 58%;
+	}
+
+	@include device-width(6) {
+		font-size: 57%;
+	}
+
+	@include device-width(5) {
+		font-size: 56%;
+	}
+
+	@include device-width(4) {
+		font-size: 55%;
+	}
 }
 
 body {
@@ -12,7 +37,11 @@ body {
 	line-height: 1.5;
 	min-width: 250px;
 	background: #FFF;
-	@include nexa-light;
+	background: url('../images/backgrounds/header_bg.jpg');
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: cover;
+
 }
 
 #wrap {
@@ -127,18 +156,258 @@ body {
 
 }
 		
-			
+		
+#header {
+}
+
 #main {
 
 }
 		
-#sidebar {}
-	
-#footer {
-}
-
 
 /* =============================================================================
    Pages
    ========================================================================== */
+
+.row {
+	background-position: center !important;
+
+	&.header {
+		color: #FFF;
+		text-align: center;		
+		background: url('../images/backgrounds/header_bg.jpg');
+		background-position: center center;
+		background-size: cover;	
+
+		.join {
+			float: right;
+			margin-top: 25px;
+			color: #FFF;
+			text-transform: uppercase;
+			font-weight: bold;
+			@include font-size(12);
+			position: relative;
+			z-index: 5;
+
+			&:hover {
+				text-decoration: underline;
+			}
+
+			&.icon-mail-icon:before {
+				font-size: 8px;
+				margin-right: 9px;
+			}
+		}	
+
+		.span {
+			min-height: 825px;
+			width: 100%;
+
+			@include device-width(10){
+				min-height: 600px;				
+			}
+
+			@include device-width(4){
+				min-height: 400px;				
+			}
+
+			.welcome, .logo {
+				vertical-align: middle;
+
+				@include device-width(6){
+					line-height: 55px;				
+				}
+
+			}
+
+			.welcome {
+				@include font-size(25);
+				letter-spacing: 8px;
+			}
+
+			.logo {
+				@include font-size(80);
+				margin-left: 40px;
+
+				@include device-width(6){
+					margin-left: 0px;	
+				}
+
+			}
+		}
+
+		.bottom {
+			position: absolute;
+			width: 100%;
+			bottom: 10%;	
+			letter-spacing: 4px;		
+		}
+	}
+
+	&.official {
+		
+		.span {
+			@include min-height(520);
+		}
+	}
+
+	&.unlimited-access {
+
+		.span {
+			@include min-height(585);
+		}
+	}
+
+	&.galleries {
+		.span {
+			@include min-height(585);
+		}
+	}
+
+	&.mapping {
+
+		.span {
+			@include min-height(585);
+		}		
+
+	}
+
+	&.comments {
+		position: relative;
+		z-index: 2;
+
+		.span {
+			@include min-height(590);
+		}			
+	}
+
+	&.plus {
+		background: #FFF !important;
+
+		.span {
+			@include min-height(282);
+			width: 100%;
+			padding-top: 63px;
+			text-transform: uppercase;
+			color: #333;
+
+			h3 {
+				@include novecento;
+				@include font-size(25);
+				line-height: 1.5;
+				letter-spacing: 2px;
+				padding: 0 15%;				
+			}
+
+			h4 {
+				@include font-size(18);
+				@include novecento-medium;
+				margin-top: 60px;
+
+				strong {
+					@include novecento-bold;
+				}
+
+			}
+
+			h5 {
+				@include font-size(14);
+				@include novecento-medium;
+			}
+		}	
+
+		.csstransforms & {
+			-webkit-transform: rotate(-3deg);
+			width: 110%;
+			margin-left: -5%;
+			margin-top: -35px;
+
+			.container {
+				-webkit-transform: rotate(3deg);
+
+				.span {
+					@include min-height(282);
+					padding-top: 100px;
+					padding-bottom: 60px;
+				}
+			}
+		}				
+	}
+
+	&.get-started {
+
+		.span {
+			@include min-height(740);
+			width: 100%;
+			padding-top: 200px;
+		}
+
+		h1, h2 {
+			color: #FFF;
+			text-transform: uppercase;
+		}
+		h1 {
+			@include font-size(50);
+			@include nexa-light;
+			@include text-shadow(0 0 30px #ee4e92);
+			letter-spacing: 4px;
+		}
+
+		h2 {
+			@include font-size(18);
+			@include novecento;
+			letter-spacing: 1px;
+		}
+	}
+
+	&.fan-header {
+		text-align: center;
+		.span {
+			@include min-height(740);
+			width: 100%;
+			color: #FFF;
+			text-transform: uppercase;		
+
+			.logo {
+				font-size: 55px;
+				margin-top: 80px;
+				display: block;
+			}
+
+			h1 {
+				@include font-size(45);
+				@include novecento-medium;
+				@include text-shadow(0 0 30px #ee4e92);
+				letter-spacing: 4px;
+				padding: 0 20%;
+				line-height: 1.2;				
+			}
+
+			h2 {
+				@include font-size(20);
+				@include novecento-medium;
+				letter-spacing: 3px;
+				@include text-shadow(0 0 20px #ee4e92);
+				margin-top: 30px;
+			}
+
+		}			
+	}
+
+	&.thankyou-bottom {
+		.span {
+			@include min-height(588);
+		}		
+	}
+}
+
+#footer {
+	background: #000;
+	padding: 35px 0;
+	color: #FFF;
+	@include font-size(12);
+	@include novecento-bold;
+}
+
+
 
