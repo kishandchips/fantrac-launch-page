@@ -88,7 +88,7 @@ blockquote {
 }
 
 .hide-on-mobile {
-	@include device-width(5) {
+	@include device-width(7) {
 		display: none !important;
 	}
 }
@@ -331,6 +331,18 @@ hr {
 	position: relative;
 	width: 80%;
 	margin: 0 auto;
+
+	@include device-width(9) {
+		padding: 55px 15px 40px;
+	}
+
+	@include device-width(7) {
+		width: 60%;
+	}	
+
+	@include device-width(5) {
+		width: 90%;
+	}	
 
 	strong {
 		@include novecento-bold;

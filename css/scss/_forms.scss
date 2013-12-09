@@ -193,6 +193,12 @@ fieldset {
 								@include border-radius(5px);
 								padding: 22px 31px !important;
 
+								@include device-width(5) {
+									float: none;
+									width: 96%;
+									height: auto !important;
+								}
+
 								label {
 									@include font-size(16);
 									@include novecento-bold;

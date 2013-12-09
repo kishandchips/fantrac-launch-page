@@ -79,7 +79,7 @@ $i: 1;
 }
 
 .break-on-mobile {
-	@include device-width(5) {
+	@include device-width(7) {
 		width: 100% !important;
 		margin-left: 0;
 		margin-right: 0;

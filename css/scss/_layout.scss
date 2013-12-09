@@ -248,6 +248,25 @@ body {
 		
 		.span {
 			@include min-height(520);
+
+			@include device-width(7) {
+				@include min-height(400);
+			}
+
+			@include device-width(5) {
+				img {
+					width: 120%;
+					height: auto;
+				}
+			}
+
+			@include device-width(4) {
+				img {
+					width: 170%;
+					height: auto;
+				}
+			}
+
 		}
 	}
 
@@ -255,6 +274,10 @@ body {
 
 		.span {
 			@include min-height(585);
+
+			@include device-width(7) {
+				@include min-height(415);
+			}
 		}
 	}
 
@@ -276,8 +299,21 @@ body {
 		position: relative;
 		z-index: 2;
 
+		@include device-width(7) {
+			background-size: cover !important;
+		}
+
 		.span {
 			@include min-height(590);
+
+			@include device-width(7) {
+				@include min-height(370);
+
+				img {
+					max-width: 100%;
+					height: auto;
+				}
+			}			
 		}			
 	}
 
