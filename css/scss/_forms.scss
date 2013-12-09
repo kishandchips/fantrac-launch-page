@@ -175,10 +175,16 @@ fieldset {
 					&.gfield_error {
 						border: none;
 						background: none;
+						width: 100%;
+
 	//					@include background(rgba(#a40000, 0.4));
 						label {
 							color: #333;
 							display: none;
+						}
+
+						input {
+							border: none;
 						}
 					}
 
@@ -250,6 +256,11 @@ fieldset {
 
 					&.email {
 						margin: 30px 0 0 0;
+						height: 55px;
+
+						&.gfield_error {
+							height: 51px;	
+						}
 
 						input {
 							width: 79%;
@@ -283,6 +294,8 @@ fieldset {
 					}
 
 					.ginput_container {
+						@extend .clearfix;
+
 						input[type=text],
 						input[type=email],
 						input[type=url],
@@ -299,7 +312,7 @@ fieldset {
 					.gfield_description {
 						&.validation_message {
 							padding: 0 !important;
-							margin: 0;
+							margin: 20px 0 0 0;
 							color: #df5206;
 						}
 					}
@@ -309,7 +322,7 @@ fieldset {
 
 	 	.gform_footer {
 	 		padding: 0;
-	 		margin: 0;
+	 		margin: -55px 0 0 0;
 
 	 		.button {
 	 			float: right;
@@ -322,8 +335,7 @@ fieldset {
 				width: 18%;
 				@include border-left-radius(0px);
 				@include border-right-radius(5px);
-				margin-top: -55px;
-				margin-right: 2%;	
+				margin-right: 2%;
 				@include transition(all 0.3s ease);
 
 				&:hover {
