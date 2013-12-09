@@ -318,9 +318,11 @@ fieldset {
 				@include border-right-radius(5px);
 				margin-top: -55px;
 				margin-right: 2%;	
+				@include transition(all 0.3s ease);
 
 				&:hover {
 					background: #15775e;
+					@include transition(all 0.3s ease);
 				}	
 	 		}
 	 	}
