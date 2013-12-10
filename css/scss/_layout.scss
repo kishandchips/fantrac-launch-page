@@ -41,7 +41,10 @@ body {
 	background-attachment: fixed;
 	background-position: center center;
 	background-size: cover;
+	height: 100%;
 
+
+	-webkit-font-smoothing: antialiased;	
 }
 
 #wrap {
@@ -199,16 +202,16 @@ body {
 			}
 		}	
 
-		.span {
-			min-height: 825px;
+		.span {			
+			height: 650px;
 			width: 100%;
 
 			@include device-width(10){
-				min-height: 600px;				
+				height: 600px;				
 			}
 
 			@include device-width(4){
-				min-height: 400px;				
+				height: 400px;				
 			}
 
 			.welcome, .logo {
@@ -240,7 +243,8 @@ body {
 			position: absolute;
 			width: 100%;
 			bottom: 10%;	
-			letter-spacing: 4px;		
+			letter-spacing: 5px;		
+			@include font-size(16);
 		}
 	}
 
@@ -386,13 +390,13 @@ body {
 			@include font-size(50);
 			@include nexa-light;
 			@include text-shadow(0 0 30px #ee4e92);
-			letter-spacing: 4px;
+			letter-spacing: 5px;
 		}
 
 		h2 {
 			@include font-size(18);
 			@include novecento;
-			letter-spacing: 1px;
+			letter-spacing: 3px;
 		}
 	}
 

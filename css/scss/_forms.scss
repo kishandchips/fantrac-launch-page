@@ -144,9 +144,12 @@ fieldset {
 
 		div.validation_error {
 			text-align: center;
-			@include font-size(12);
+			@include font-size(18);
 			font-weight: normal;
 			margin: 2em 0 0 0;
+			text-transform: uppercase;
+			color: #e9292a;
+			padding: 0 5%;
 		}
 
 	 	.gform_body {
@@ -312,8 +315,8 @@ fieldset {
 					.gfield_description {
 						&.validation_message {
 							padding: 0 !important;
-							margin: 20px 0 0 0;
-							color: #df5206;
+							margin: 5px 0 0 0;
+							color: #e9292a;
 						}
 					}
 	 			}
@@ -337,6 +340,11 @@ fieldset {
 				@include border-right-radius(5px);
 				margin-right: 2%;
 				@include transition(all 0.3s ease);
+				text-transform: uppercase;
+				@include font-size(16);
+				@include novecento-bold;
+				font-weight: normal;
+				letter-spacing: 2px;
 
 				&:hover {
 					background: #15775e;
@@ -398,6 +406,7 @@ fieldset {
 
 	.gform_footer {
 		text-align: center;
+		margin: 0;
 
 		input.button, input[type=submit] {
 			float: none !important;

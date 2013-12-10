@@ -13,10 +13,11 @@
 		el.innerHTML = '<span style="font-family: \'icons\'">' + entity + '</span>' + html;
 	}
 	var icons = {
-		'icon-star': '&#x31;',
 		'icon-arrow-down': '&#x32;',
-		'icon-fantrac-logo': '&#x33;',
 		'icon-mail-icon': '&#x34;',
+		'icon-fantrac-logo': '&#x33;',
+		'icon-star': '&#x31;',
+		'icon-error': '&#x35;',
 		'0': 0
 		},
 		els = document.getElementsByTagName('*'),

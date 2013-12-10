@@ -1,12 +1,15 @@
-.icon-star {
-	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x31;');
-}
 .icon-arrow-down {
 	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x32;');
+}
+.icon-mail-icon {
+	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x34;');
 }
 .icon-fantrac-logo {
 	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x33;');
 }
-.icon-mail-icon {
-	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x34;');
+.icon-star {
+	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x31;');
+}
+.icon-error {
+	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x35;');
 }

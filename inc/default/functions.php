@@ -131,3 +131,8 @@ function custom_gform_enqueue_scripts($form, $is_ajax=false){
     </script>
     <?php
 }
+
+add_filter("gform_validation_message", "change_message", 10, 2);
+function change_message($message, $form){
+  return "<div class='validation_error'><span class='icon-error'></span> There was a problem with your submission. Errors have been highlighted below.</div>";
+}

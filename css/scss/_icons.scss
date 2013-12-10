@@ -23,15 +23,18 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-star:before {
-	content: "\31";
-}
 .icon-arrow-down:before {
 	content: "\32";
+}
+.icon-mail-icon:before {
+	content: "\34";
 }
 .icon-fantrac-logo:before {
 	content: "\33";
 }
-.icon-mail-icon:before {
-	content: "\34";
+.icon-star:before {
+	content: "\31";
+}
+.icon-error:before {
+	content: "\35";
 }
